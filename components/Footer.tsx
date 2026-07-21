@@ -68,7 +68,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="font-display mt-4 block text-xl font-bold text-white transition-colors hover:text-verde"
             >
-              305 782 9807
+              +57 305 782 9807
             </a>
 
             <div className="mt-5 flex gap-3">

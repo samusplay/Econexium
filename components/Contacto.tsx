@@ -58,7 +58,7 @@ ${mensaje || "Quiero información sobre instalación de cargadores."}`;
                     WhatsApp
                   </p>
                   <p className="font-display text-lg font-bold text-gris">
-                    305 782 9807
+                     +57 305 782 9807
                   </p>
                 </div>
               </a>
@@ -76,7 +76,7 @@ ${mensaje || "Quiero información sobre instalación de cargadores."}`;
                     Llámanos
                   </p>
                   <p className="font-display text-lg font-bold text-gris">
-                    305 782 9807
+                     +57 305 782 9807
                   </p>
                 </div>
               </a>
