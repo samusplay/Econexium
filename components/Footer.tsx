@@ -17,7 +17,7 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_auto]">
           {/* Marca */}
           <div>
-            <Logo variante="horizontal" ancho={170} sobreFondoOscuro />
+            <Logo variante="completo" ancho={130} sobreFondoOscuro />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/55">
               Instalación de cargadores para vehículos eléctricos en hogares,
               edificios y empresas.
