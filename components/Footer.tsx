@@ -1,4 +1,5 @@
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
+import Logo from "./ui/Logo";
 
 const enlaces = [
   { href: "#servicios", texto: "Servicios" },
@@ -16,19 +17,7 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_auto]">
           {/* Marca */}
           <div>
-            <div className="flex items-center gap-2.5">
-              <svg width="38" height="30" viewBox="0 0 42 34" fill="none" aria-hidden="true">
-                <path d="M11 2H31L40 17L31 32H11L2 17Z" stroke="#FFFFFF" strokeWidth="2.5" fill="none" />
-                <rect x="12" y="16" width="3.2" height="8" rx="1" fill="#4CAF50" />
-                <rect x="17" y="13" width="3.2" height="11" rx="1" fill="#4CAF50" />
-                <rect x="22" y="11" width="3.2" height="13" rx="1" fill="#4CAF50" />
-                <rect x="27" y="13" width="3.2" height="11" rx="1" fill="#4CAF50" />
-              </svg>
-              <span className="font-display text-lg font-extrabold tracking-tight">
-                <span className="text-verde">ECO</span>
-                <span className="text-white">NEXIUM</span>
-              </span>
-            </div>
+            <Logo variante="horizontal" ancho={170} sobreFondoOscuro />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/55">
               Instalación de cargadores para vehículos eléctricos en hogares,
               edificios y empresas.

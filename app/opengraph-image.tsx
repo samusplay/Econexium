@@ -1,9 +1,15 @@
+import { readFileSync } from "fs";
 import { ImageResponse } from "next/og";
+import { join } from "path";
 
-export const alt =
-  "ECONEXIUM — Instalamos cargadores para vehículos eléctricos";
+export const alt = "ECONEXIUM — Instalamos cargadores para vehículos eléctricos";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+
+const logo = readFileSync(
+  join(process.cwd(), "public", "logo-econexium-horizontal.svg")
+);
+const logoSrc = `data:image/svg+xml;base64,${logo.toString("base64")}`;
 
 export default function Image() {
   return new ImageResponse(
@@ -16,63 +22,50 @@ export default function Image() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#0A4FA3",
+          backgroundColor: "#FFFFFF",
           padding: 80,
         }}
       >
-        {/* Hexágono con barras de carga */}
-        <svg width="180" height="146" viewBox="0 0 42 34" fill="none">
-          <path
-            d="M11 2H31L40 17L31 32H11L2 17Z"
-            stroke="#FFFFFF"
-            strokeWidth="2"
-            fill="none"
-          />
-          <rect x="12" y="16" width="3.4" height="8" rx="1" fill="#4CAF50" />
-          <rect x="17.5" y="13" width="3.4" height="11" rx="1" fill="#4CAF50" />
-          <rect x="23" y="11" width="3.4" height="13" rx="1" fill="#4CAF50" />
-          <rect x="28.5" y="13" width="3.4" height="11" rx="1" fill="#4CAF50" />
-        </svg>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={logoSrc} width={620} height={96} alt="" />
 
-        {/* Nombre de marca */}
         <div
           style={{
-            display: "flex",
-            marginTop: 36,
-            fontSize: 82,
-            fontWeight: 800,
-            letterSpacing: -2,
-          }}
-        >
-          <span style={{ color: "#4CAF50" }}>ECO</span>
-          <span style={{ color: "#FFFFFF" }}>NEXIUM</span>
-        </div>
-
-        {/* Tagline */}
-        <div
-          style={{
-            marginTop: 20,
-            fontSize: 34,
-            color: "rgba(255,255,255,0.8)",
+            marginTop: 46,
+            fontSize: 40,
+            fontWeight: 700,
+            color: "#545454",
             textAlign: "center",
-            lineHeight: 1.35,
+            lineHeight: 1.3,
           }}
         >
           Instalamos cargadores para vehículos eléctricos
         </div>
 
-        {/* Línea inferior */}
         <div
           style={{
             display: "flex",
-            marginTop: 44,
-            paddingTop: 26,
-            borderTop: "1px solid rgba(255,255,255,0.2)",
-            fontSize: 24,
-            color: "rgba(255,255,255,0.55)",
+            marginTop: 26,
+            fontSize: 26,
+            color: "#7A7A7A",
           }}
         >
           Hogares · Edificios · Empresas — Colombia
+        </div>
+
+        {/* Franja inferior con los colores de marca */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            display: "flex",
+            width: "100%",
+            height: 14,
+          }}
+        >
+          <div style={{ width: "38%", height: "100%", backgroundColor: "#4CAF50" }} />
+          <div style={{ width: "62%", height: "100%", backgroundColor: "#0A4FA3" }} />
         </div>
       </div>
     ),
