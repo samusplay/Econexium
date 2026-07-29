@@ -1,5 +1,6 @@
 import BotonWhatsApp from "@/components/BotonWhatsApp";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
 import type { Metadata } from "next";
 import { Montserrat, Open_Sans } from "next/font/google";
 import "./globals.css";
@@ -19,7 +20,7 @@ const openSans = Open_Sans({
 });
 //Agregar dominio
 export const metadata: Metadata = {
-  metadataBase: new URL("https://econexium.com"),
+  metadataBase: new URL("https://econexium.com.co"),
   title: "ECONEXIUM | Instalación de cargadores para vehículos eléctricos",
   description:
     "Diseñamos e instalamos soluciones de carga eléctrica seguras, eficientes y adaptadas a tu espacio. Hogares, edificios residenciales y empresas en Colombia.",
@@ -31,6 +32,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${montserrat.variable} ${openSans.variable}`}>
       <body>
+        <JsonLd />
         {children}
         <Footer />
         <BotonWhatsApp />
